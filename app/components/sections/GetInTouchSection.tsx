@@ -2,7 +2,6 @@ import React from "react";
 import SectionTitle from "../common/SectionTitle";
 import Heading from "../common/Heading";
 import Description from "../common/Description";
-import { ArrowUpRight } from "lucide-react";
 import CTAButton from "../common/CTAButton";
 
 type Props = {};

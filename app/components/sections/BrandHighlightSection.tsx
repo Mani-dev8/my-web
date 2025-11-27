@@ -4,7 +4,7 @@ type Props = {}
 
 function BrandHighlightSection({ }: Props) {
     return (
-        <section className="max-w-6xl mx-auto py-16 px-4 text-center mt-20">
+        <section className="max-w-6xl w-full mx-auto py-16 px-4 text-center mt-20">
             {/* Main Heading */}
             <Heading>
                 Proven Success, Trusted By <br className="hidden md:block" />
@@ -12,7 +12,7 @@ function BrandHighlightSection({ }: Props) {
             </Heading>
 
             {/* Content Paragraph with Inline Capsules */}
-            <div className="max-w-4xl w-102 mx-auto text-base md:text-2xl text-gray-500 leading-12 font-medium">
+            <div className="max-w-4xl  mx-auto text-base md:text-2xl text-gray-500 leading-12 font-medium">
                 <p>
                     We help brands grow through
 

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import FadedCircle from "../common/FadedCircle";
 import ElevatedIcon from "../common/ElevatedIcon";
@@ -21,7 +22,16 @@ function HeroSection({}: Props) {
       <DoubleCurlyIcon className="bottom-[20%] left-[15%] absolute z-10 size-16" />
       <DoubleCurlyIcon className="bottom-[15%] right-[15%] absolute z-10 size-16 -scale-x-100" />
       <HeroStarIcon className="absolute bottom-[10%] right-1/2" />
-      <CTAButton title="Let’s Connect" />
+      <CTAButton
+        title="Let’s Connect"
+        onClick={() => {
+          const target = document.getElementById("get-in-touch");
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }}
+        type="button"
+      />
       <FadedCircle position={{ top: "-5%", left: "10%" }} size={200} />
       <FadedCircle
         position={{ bottom: "-10%", right: "-20%" }}

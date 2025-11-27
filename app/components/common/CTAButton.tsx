@@ -6,9 +6,11 @@ import { useState } from "react";
 type Props = {
   title: string;
   inverse?: boolean;
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
 };
 
-function CTAButton({ title, inverse = false }: Props) {
+function CTAButton({ title, inverse = false, onClick, type }: Props) {
   const [isHovered, setIsHovered] = useState(false);
 
   // Color configuration based on inverse prop
@@ -29,6 +31,8 @@ function CTAButton({ title, inverse = false }: Props) {
       style={{
         backgroundColor: colors.bg,
       }}
+      type={type}
+      onClick={onClick}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       whileTap={{ scale: 0.98 }}

@@ -8,10 +8,6 @@ export default function Footer() {
         <div className="space-y-4">
           <p className="text-gray-300">
             <span className="font-semibold">Email:</span>{" "}
-            contact@[youragency].com
-          </p>
-          <p className="text-gray-300">
-            <span className="font-semibold">Email:</span>{" "}
             suyashshirsat521@gmail.com
           </p>
           <p className="text-gray-300">
@@ -19,7 +15,7 @@ export default function Footer() {
           </p>
           <p className="text-gray-300">
             <span className="font-semibold">Address:</span> Mumbai, Maharashtra
-            India (Remote)
+            India
           </p>
         </div>
 
@@ -53,11 +49,11 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold text-lg mb-4">NEWSLETTERS</h3>
 
-          <div className="flex items-center gap-3">
+          <div className="space-y-4 flex flex-col items-end">
             <input
               type="text"
               placeholder="First Name"
-              className="flex-1 bg-transparent border-b border-gray-500 text-gray-300 py-2 outline-none"
+              className="w-full bg-transparent border-b border-gray-500 text-gray-300 py-2 outline-none"
             />
 
             {/* Submit Button */}

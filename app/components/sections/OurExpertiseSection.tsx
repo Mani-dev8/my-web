@@ -13,7 +13,7 @@ function OurExpertiseSection({ }: Props) {
         Building Digital Experiences That Inspire Growth
       </Heading>
       <Description text='We specialize in blending creativity, technology, and storytelling delivering design solutions that not only look stunning but perform seamlessly.' />
-      <div className="space-y-4 mt-4">
+      <div className="space-y-4 mt-4 mx-4">
         {services.map((item, index) => <ExpertiseCard key={`expertise_card_${index}`} {...item} />)}
       </div>
     </section>
