@@ -124,7 +124,7 @@ const Navbar = () => {
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 
-        ${isScrolled ? "backdrop-blur-md shadow-sm border-b border-slate-200/50 dark:border-slate-800/50" : ""}`}
+        ${isScrolled ? "backdrop-blur-md shadow-sm border-b border-slate-200/50" : ""}`}
             >
                 <motion.div
                     className="flex items-center gap-2 cursor-pointer"

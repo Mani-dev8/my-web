@@ -1,10 +1,13 @@
 import React from 'react'
 
-type Props = {}
+type Props = {
+  text: string
+  className?: string
+}
 
-function Description({}: Props) {
+function Description({ text, className }: Props) {
   return (
-    <p>We specialize in blending creativity, technology, and storytelling delivering design solutions that not only look stunning but perform seamlessly.</p>
+    <p className={`text-zinc-500 max-w-96 md:text-lg text-center ${className}`}>{text}</p>
   )
 }
 
