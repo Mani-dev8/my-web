@@ -11,7 +11,7 @@ type Props = {};
 
 function HeroSection({}: Props) {
   return (
-    <section className="relative h-screen overflow-hidden flex flex-col space-y-4 items-center justify-center text-center">
+    <section className="relative h-screen min-h-200 overflow-hidden flex flex-col space-y-4 items-center justify-center text-center">
       <h1 className="text-4xl font-semibold text-center max-w-md">
         Where <ElevatedIcon size={74} /> Design Meets Digital{" "}
         <span className="text-primary">Growth</span>.

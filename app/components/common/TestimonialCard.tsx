@@ -31,7 +31,7 @@ export default function TestimonialCard({
       </div>
 
       {/* Quote icon */}
-      <div className="pt-14 text-[144px] text-gray-400 leading-0">“</div>
+      <div className="pt-14 -ml-4 text-[144px] text-gray-400 leading-0 font-mono">“</div>
 
       {/* Testimonial text */}
       <blockquote className="text-[15px] leading-relaxed text-gray-600 font-medium">

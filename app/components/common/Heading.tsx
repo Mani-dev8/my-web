@@ -6,7 +6,7 @@ type Props = PropsWithChildren & {
 
 function Heading({ children, className }: Props) {
     return (
-        <h2 className={`text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight text-center ${className}`}>
+        <h2 className={`text-[28px] md:text-3xl font-bold text-gray-900 mb-4 tracking-tight leading-tight text-center ${className}`}>
             {children}
         </h2>
     )

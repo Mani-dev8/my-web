@@ -55,7 +55,7 @@ function CTAButton({ title, inverse = false, onClick, type }: Props) {
 
       {/* Text Content */}
       <motion.span
-        className="relative z-10 text-base md:text-lg font-semibold tracking-wide pr-3"
+        className="relative z-10 text-base md:text-lg font-medium tracking-wide pr-3"
         animate={{ color: isHovered ? colors.hoverText : colors.text }}
         transition={{ duration: 0.3 }}
       >
