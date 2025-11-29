@@ -5,7 +5,7 @@ type Props = {}
 
 function BrandHighlightSection({ }: Props) {
     return (
-        <SectionWrapper className="max-w-6xl w-full mx-auto py-16 px-4 text-center mt-20 lg:items-center">
+        <SectionWrapper className="max-w-6xl w-full mx-auto py-16 px-4 text-center lg:items-center">
             {/* Main Heading */}
             <Heading className="lg:text-center">
                 Proven Success, Trusted By <br className="hidden md:block" />
