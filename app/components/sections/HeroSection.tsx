@@ -6,13 +6,14 @@ import CTAButton from "../common/CTAButton";
 import { CurlyLoopIcon, DoubleCurlyIcon, HeroStarIcon } from "../icons";
 import Image from "next/image";
 import Description from "../common/Description";
+import SectionWrapper from "../common/SectionWrapper";
 
 type Props = {};
 
 function HeroSection({}: Props) {
   return (
-    <section className="relative h-screen min-h-200 overflow-hidden flex flex-col space-y-4 items-center justify-center text-center">
-      <h1 className="text-4xl font-semibold text-center max-w-md">
+    <SectionWrapper className="overflow-hidden max-w-none relative h-screen min-h-200 text-center lg:items-center space-y-2 md:space-y-4 lg:space-y-8">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center max-w-md lg:max-w-xl">
         Where <ElevatedIcon size={74} /> Design Meets Digital{" "}
         <span className="text-primary">Growth</span>.
       </h1>
@@ -45,17 +46,17 @@ function HeroSection({}: Props) {
         alt="hero1 image"
         height={90}
         width={180}
-        className="h-48 w-56 object-cover rotate-15 rounded-lg overflow-hidden border absolute -bottom-10 -left-10"
+        className="h-48 w-56 object-cover rotate-15 rounded-lg overflow-hidden border absolute -bottom-10 -left-10 lg:left-1/5"
         src={"/home/hero1.png"}
       />
       <Image
         alt="hero1 image"
         height={90}
         width={180}
-        className="h-48 w-56 object-cover -rotate-15 rounded-lg overflow-hidden border absolute -bottom-10 -right-10"
+        className="h-48 w-56 object-cover -rotate-15 rounded-lg overflow-hidden border absolute -bottom-10 -right-10 lg:right-1/5"
         src={"/home/hero2.png"}
       />
-    </section>
+    </SectionWrapper>
   );
 }
 

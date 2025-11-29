@@ -1,12 +1,13 @@
 import Heading from "../common/Heading"
+import SectionWrapper from "../common/SectionWrapper"
 
 type Props = {}
 
 function BrandHighlightSection({ }: Props) {
     return (
-        <section className="max-w-6xl w-full mx-auto py-16 px-4 text-center mt-20">
+        <SectionWrapper className="max-w-6xl w-full mx-auto py-16 px-4 text-center mt-20 lg:items-center">
             {/* Main Heading */}
-            <Heading>
+            <Heading className="lg:text-center">
                 Proven Success, Trusted By <br className="hidden md:block" />
                 Brands Worldwide
             </Heading>
@@ -56,7 +57,7 @@ function BrandHighlightSection({ }: Props) {
                     companies that trust us to transform their digital presence.
                 </p>
             </div>
-        </section>
+        </SectionWrapper>
     )
 }
 

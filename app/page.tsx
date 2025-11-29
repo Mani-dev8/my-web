@@ -10,7 +10,7 @@ import OurTrustedClientSection from "./components/sections/OurTrustedClientSecti
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-zinc-50">
+    <main className="min-h-screen bg-zinc-50">
       <header className="">
         <Navbar />
       </header>
@@ -21,6 +21,6 @@ export default function Home() {
       <OurTrustedClientSection />
       <GetInTouchSection />
       <Footer />
-    </div>
+    </main>
   );
 }

@@ -4,27 +4,27 @@ import Heading from "../common/Heading";
 import Description from "../common/Description";
 import TrustedClientsCard from "../common/TrustedClientsCard";
 import TestimonialCard from "../common/TestimonialCard";
+import SectionWrapper from "../common/SectionWrapper";
 
 type Props = {};
 
 function OurTrustedClientSection({}: Props) {
   return (
-    <section
-      id="our-trusted-client"
-      className="flex flex-col items-center justify-center py-16 bg-zinc-100"
-    >
+    <SectionWrapper key="our-trusted-client" showBg>
       <SectionTitle title="Our Trusted Client" />
       <Heading className="mt-7">
         Long-Term Relationships Fueled by Trust & Creativity
       </Heading>
       <Description text="We’ve partnered with visionary brands over the years, delivering creative solutions built on trust, consistency, and shared success." />
-      {clientsData.map((item) => (
-        <TrustedClientsCard
-          key={item.id}
-          imgAlt={item.imgAlt}
-          imgSrc={item.imgSrc}
-        />
-      ))}
+      <div className="w-full md:flex">
+        {clientsData.map((item) => (
+          <TrustedClientsCard
+            key={item.id}
+            imgAlt={item.imgAlt}
+            imgSrc={item.imgSrc}
+          />
+        ))}
+      </div>
       <div className="flex w-full justify-start items-start gap-x-4 overflow-x-auto">
         {testimonialData.map((item) => (
           <TestimonialCard
@@ -37,7 +37,7 @@ function OurTrustedClientSection({}: Props) {
           />
         ))}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }
 

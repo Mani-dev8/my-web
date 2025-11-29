@@ -3,7 +3,7 @@ import CTAButton from "../common/CTAButton";
 export default function Footer() {
   return (
     <footer className="w-full bg-black text-white py-16 px-6 md:px-20">
-      <div className="max-w-7xl mx-auto flex flex-col gap-12 md:grid md:grid-cols-3 lg:grid-cols-4">
+      <div className="max-w-7xl mx-auto flex flex-col gap-12 md:grid md:grid-cols-3 lg:grid-cols-4 not-last:">
         {/* CONTACT SECTION */}
         <div className="space-y-4">
           <p className="text-gray-300">
@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
 
         {/* NEWSLETTER */}
-        <div>
+        <div className="">
           <h3 className="text-white font-semibold text-lg mb-4">NEWSLETTERS</h3>
 
           <div className="space-y-4 flex flex-col items-end">
