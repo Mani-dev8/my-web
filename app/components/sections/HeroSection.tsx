@@ -16,7 +16,7 @@ import TextFade from "../common/TextFade";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-type Props = {
+type RenderSectionProps = {
   prefixText: string;
   suffixText: string;
   Icon: React.ReactNode;
@@ -32,22 +32,22 @@ const RenderSection = ({
   primaryText,
   color,
   description,
-}: Props) => {
+}: RenderSectionProps) => {
   return (
     <TextFade
       direction="up"
-      className="space-y-2 md:space-y-4 lg:space-y-8 mb-2 md:mb-4 lg:mb-8"
+      className="space-y-2 md:space-y-4 lg:space-y-8 mb-4 md:mb-4 lg:mb-8"
     >
-      <h1 className="text-3xl sm:text-4xl md:text-5xl md:leading-tight font-semibold text-center max-w-md lg:max-w-2xl">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[82px] md:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl">
         {prefixText} {Icon}&nbsp;
         {suffixText} <span className={`${color}`}>{primaryText}</span>.
       </h1>
-      <Description className="md:text-center" text={description} />
+      <Description className="mx-auto md:text-center" text={description} />
     </TextFade>
   );
 };
 
-function HeroSection({}: Props) {
+function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -110,7 +110,7 @@ const heroData = [
   {
     prefixText: "Where",
     suffixText: "Design Meets Digital",
-    Icon: <ElevatedIcon size={68} />,
+    Icon: <ElevatedIcon />,
     primaryText: "Growth",
     color: "text-pink-500",
     description:
@@ -119,9 +119,7 @@ const heroData = [
   {
     prefixText: "Crafting Digital Experiences",
     suffixText: "That",
-    Icon: (
-      <ElevatedIcon size={68} icon={<CogAutomationIcon />} color="violet" />
-    ),
+    Icon: <ElevatedIcon icon={<CogAutomationIcon />} color="violet" />,
     primaryText: "Inspire",
     color: "text-violet-500",
     description:
@@ -130,7 +128,9 @@ const heroData = [
   {
     prefixText: "Accelerating brands",
     suffixText: "Through",
-    Icon: <ElevatedIcon size={68} icon={<RocketIcon />} color="blue" />,
+    Icon: (
+      <ElevatedIcon icon={<RocketIcon className="size-5" />} color="blue" />
+    ),
     primaryText: "Innovations",
     color: "text-blue-500",
     description:
