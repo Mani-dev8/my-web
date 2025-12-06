@@ -2,20 +2,43 @@
 import { motion, useInView, Variants } from "framer-motion";
 import * as React from "react";
 
-export default function TextFade({
+export default function TextTranslate({
   direction,
   children,
   className = "",
   staggerChildren = 0.2,
+  delay = 0,
+  disableAnimation = false,
 }: {
   direction: "up" | "down";
   children: React.ReactNode;
   className?: string;
   staggerChildren?: number;
+  delay?: number;
+  disableAnimation?: boolean;
 }) {
+  if (disableAnimation) {
+    return (
+      <div className={className}>
+        {React.Children.map(children, (child) =>
+          React.isValidElement(child) ? (
+            <div className="overflow-hidden py-2">{child}</div>
+          ) : (
+            child
+          )
+        )}
+      </div>
+    );
+  }
+
   const FADE_DOWN: Variants = {
-    show: { opacity: 1, y: 0, transition: { type: "spring" } },
-    hidden: { opacity: 0, y: direction === "down" ? -28 : 28 },
+    show: {
+      y: 0,
+      transition: { type: "tween", duration: 0.5, ease: "easeOut" },
+    },
+    hidden: {
+      y: direction === "down" ? "-140%" : "120%",
+    },
   };
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -29,6 +52,7 @@ export default function TextFade({
         show: {
           transition: {
             staggerChildren: staggerChildren,
+            delayChildren: delay,
           },
         },
       }}
@@ -36,7 +60,9 @@ export default function TextFade({
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child) ? (
-          <motion.div variants={FADE_DOWN}>{child}</motion.div>
+          <div className="overflow-hidden py-2">
+            <motion.div variants={FADE_DOWN}>{child}</motion.div>
+          </div>
         ) : (
           child
         )
