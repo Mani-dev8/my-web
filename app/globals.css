@@ -14,6 +14,7 @@
   --color-primary: var(--primary);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
+  --spacing-120: 30rem;
 }
 
 @media (prefers-color-scheme: dark) {

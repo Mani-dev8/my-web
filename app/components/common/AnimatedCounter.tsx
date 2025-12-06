@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import { useCallback, useEffect, useRef } from "react";
 
@@ -27,7 +27,7 @@ export default function AnimatedCounter({
   separator = "",
   onStart,
   onEnd,
-  label
+  label,
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(direction === "down" ? to : from);
@@ -128,7 +128,7 @@ export default function AnimatedCounter({
 
   return (
     <div className="text-center space-y-2">
-      <div className="flex items-center justify-center text-5xl font-medium font-mono">
+      <div className="flex items-center justify-center text-5xl md:text-6xl lg:text-7xl font-medium">
         <span>+</span>
         <span className={className} ref={ref} />
       </div>

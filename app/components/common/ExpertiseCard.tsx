@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Image from "next/image";
 
 type Props = {
@@ -25,12 +26,10 @@ function ExpertiseCard({
     <div
       onMouseEnter={() => setActiveIndex(index)}
       onMouseLeave={() => setActiveIndex(0)} // RESET TO FIRST CARD
-      className={`
-        group relative w-full 
-        transition-all duration-500 overflow-hidden rounded-3xl shadow-xl
-
-        lg:${isActive ? "w-120" : "w-2/12"}
-      `}
+      className={clsx(
+        "group relative w-full transition-all duration-500 overflow-hidden rounded-3xl shadow-xl",
+        isActive ? "lg:w-120" : "lg:w-2/12"
+      )}
     >
       <Image
         height={200}
