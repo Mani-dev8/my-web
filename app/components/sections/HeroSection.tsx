@@ -13,7 +13,7 @@ import {
   RocketIcon,
 } from "../icons";
 import TextTranslate from "../common/TextTranslate";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, type MotionProps, type Transition } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 type RenderSectionProps = {
@@ -53,16 +53,14 @@ const RenderSection = ({
   );
 };
 
-const fadeAnimationOption = (type: "up" | "down" | "static") => {
-  return {
-    initial: {
-      y: type === "static" ? 0 : type === "down" ? -80 : 80,
-      opacity: 0,
-    },
-    animate: { y: 0, opacity: 1 },
-    transition: { duration: 0.8, ease: "easeOut" },
-  };
-};
+const fadeAnimationOption = (type: "up" | "down" | "static"): MotionProps => ({
+  initial: {
+    y: type === "static" ? 0 : type === "down" ? -80 : 80,
+    opacity: 0,
+  },
+  animate: { y: 0, opacity: 1 },
+  transition: { duration: 0.8, ease: "easeOut" } satisfies Transition,
+});
 
 function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
