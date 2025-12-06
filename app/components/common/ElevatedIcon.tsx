@@ -24,7 +24,7 @@ function ElevatedIcon({
   const bgColor = colorMap[color];
   return (
     <div
-      className={`relative inline-flex items-center justify-center size-8 sm:size-9 md:size-11 lg:size-16 mb-2 ${
+      className={`relative inline-flex items-center justify-center size-8 sm:size-9 md:size-11 lg:size-16  ${
         className ?? ""
       }`}
     >
@@ -41,7 +41,7 @@ function ElevatedIcon({
           className="pointer-events-none absolute inset-0 rounded-lg md:rounded-xl bg-[linear-gradient(180deg,rgba(255,255,255,0.32)_0%,rgba(255,255,255,0)_45%)] mix-blend-screen"
           aria-hidden
         />
-        <div className="relative drop-shadow-sm">
+        <div className="absolute drop-shadow-sm">
           {icon ?? (
             <TrendingUp className="h-9 w-9 text-white" strokeWidth={3} />
           )}

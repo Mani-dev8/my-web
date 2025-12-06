@@ -27,7 +27,7 @@ function CTAButton({ title, inverse = false, onClick, type }: Props) {
 
   return (
     <motion.button
-      className="relative flex items-center justify-between pl-8 pr-2 py-2 rounded-full cursor-pointer overflow-hidden group"
+      className="relative flex items-center justify-between pl-8 pr-2 py-2 rounded-full cursor-pointer overflow-hidden group border"
       style={{
         backgroundColor: colors.bg,
       }}

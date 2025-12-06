@@ -90,14 +90,14 @@ function HeroSection() {
         alt="hero1 image"
         height={90}
         width={180}
-        className="h-48 w-56 object-cover rotate-15 rounded-lg overflow-hidden border absolute -bottom-10 -left-10 lg:left-1/5"
+        className="h-48 w-56 md:h-[14.4rem] md:w-[16.8rem] lg:h-[17.28rem] lg:w-[20.16rem] object-cover rotate-15 rounded-lg  md:rounded-2xl lg:rounded-3xl overflow-hidden border absolute -bottom-10 lg:-bottom-20 -left-10 lg:left-1/5"
         src={"/home/hero1.png"}
       />
       <Image
         alt="hero1 image"
         height={90}
         width={180}
-        className="h-48 w-56 object-cover -rotate-15 rounded-lg overflow-hidden border absolute -bottom-10 -right-10 lg:right-1/5"
+        className="h-48 w-56 md:h-[14.4rem] md:w-[16.8rem] lg:h-[17.28rem] lg:w-[20.16rem] object-cover -rotate-15 rounded-lg  md:rounded-2xl lg:rounded-3xl overflow-hidden border absolute -bottom-10 lg:-bottom-20 -right-10 lg:right-1/5"
         src={"/home/hero2.png"}
       />
     </SectionWrapper>
@@ -117,8 +117,8 @@ const heroData = [
       "We Craft Compelling Stories Through Stunning Visuals, Creative Design, and Engaging Content That Captivate Audiences and Inspire Action.",
   },
   {
-    prefixText: "Crafting Digital Experiences",
-    suffixText: "That",
+    prefixText: "Crafting",
+    suffixText: "Digital Experiences That",
     Icon: <ElevatedIcon icon={<CogAutomationIcon />} color="violet" />,
     primaryText: "Inspire",
     color: "text-violet-500",

@@ -1,12 +1,15 @@
+"use client";
 import Description from "../common/Description";
 import Heading from "../common/Heading";
 import ExpertiseCard from "../common/ExpertiseCard";
 import SectionTitle from "../common/SectionTitle";
 import SectionWrapper from "../common/SectionWrapper";
+import { useState } from "react";
 
 type Props = {};
 
 function OurExpertiseSection({}: Props) {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
   return (
     <SectionWrapper showBg={true}>
       <SectionTitle title="Our Expertise" />
@@ -14,9 +17,16 @@ function OurExpertiseSection({}: Props) {
         Building Digital Experiences That Inspire Growth
       </Heading>
       <Description text="We specialize in blending creativity, technology, and storytelling delivering design solutions that not only look stunning but perform seamlessly." />
+
       <div className="space-y-4 lg:space-y-0 mt-4 mx-4 lg:flex lg:space-x-2">
         {services.map((item, index) => (
-          <ExpertiseCard key={`expertise_card_${index}`} {...item} />
+          <ExpertiseCard
+            key={`expertise_card_${index}`}
+            {...item}
+            index={index}
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
+          />
         ))}
       </div>
     </SectionWrapper>
