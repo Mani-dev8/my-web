@@ -45,14 +45,14 @@ function ExpertiseCard({
         className={`
           absolute inset-0 flex items-end p-6 md:p-8 
           transition-opacity duration-200 hover:duration-900
-          ${isActive ? "opacity-100" : "opacity-0"}
+          ${isActive ? "opacity-100" : "lg:opacity-0"}
         `}
       >
         <div className="max-w-xl">
-          <h2 className="text-2xl font-semibold text-white md:text-3xl">
+          <h2 className="text-xl sm:text-2xl font-semibold text-white md:text-3xl">
             {title}
           </h2>
-          <p className="mt-3 text-sm text-white/80 md:text-base">
+          <p className="mt-3 text-xs sm:text-sm text-white/80 md:text-base">
             {description}
           </p>
         </div>

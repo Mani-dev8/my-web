@@ -13,8 +13,14 @@ import {
   RocketIcon,
 } from "../icons";
 import TextTranslate from "../common/TextTranslate";
-import { AnimatePresence, motion, type MotionProps, type Transition } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  type MotionProps,
+  type Transition,
+} from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { TrendingUp } from "lucide-react";
 
 type RenderSectionProps = {
   prefixText: string;
@@ -40,15 +46,30 @@ const RenderSection = ({
   return (
     <TextTranslate
       direction="up"
-      className="space-y-2 mb-4 md:mb-4 lg:mb-8"
+      className=" mb-4 md:mb-4 lg:mb-8 z-10"
       delay={delay}
       disableAnimation={disableAnimation}
     >
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl lg:leading-18 xl:text-[82px] xl:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl pb-3">
-        {prefixText} {Icon}&nbsp;
-        {suffixText} <span className={`${color}`}>{primaryText}</span>.
-      </h1>
-      <Description className="mx-auto md:text-center" text={description} />
+      <div className="flex flex-wrap items-start justify-center">
+        {prefixText.split(" ").map((word, index) => (
+          <h2 className="text-4xl md:text-5xl lg:text-7xl lg:leading-18 xl:text-[82px] xl:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl pb-3">
+            {word}&nbsp;
+          </h2>
+        ))}
+        {Icon}
+        <h2 className="text-4xl md:text-5xl lg:text-7xl lg:leading-18 xl:text-[82px] xl:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl pb-3">
+          &nbsp;
+        </h2>
+        {suffixText.split(" ").map((word, index) => (
+          <h2 className="text-4xl md:text-5xl lg:text-7xl lg:leading-18 xl:text-[82px] xl:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl pb-3">
+            {word}&nbsp;
+          </h2>
+        ))}
+        <h2 className="text-4xl md:text-5xl lg:text-7xl lg:leading-18 xl:text-[82px] xl:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl pb-3">
+          <span className={`${color}`}>{primaryText}.</span>
+        </h2>
+      </div>
+      <Description className="mx-auto md:text-center lg:text-center -mt-2" text={description} />
     </TextTranslate>
   );
 };
@@ -85,10 +106,10 @@ function HeroSection() {
   const heroTextDelay = hasMounted.current ? 0 : 0.8;
   const skipFirstHeroAnimation = currentIndex === 0 && !hasLoopedOnce.current;
   return (
-    <SectionWrapper className="overflow-hidden max-w-none relative h-screen min-h-200 text-center lg:items-center">
+    <SectionWrapper className="overflow-hidden -mt-18 sm:mt-0 max-w-none relative h-screen min-h-200 text-center lg:items-center">
       <motion.div
         {...fadeAnimationOption("down")}
-        className="flex flex-col space-y-4 items-center justify-center"
+        className="flex flex-col space-y-4 sm:-mt-12 items-center justify-center"
       >
         {/* Main Content Start*/}
         <AnimatePresence mode="wait">
@@ -118,14 +139,14 @@ function HeroSection() {
         className="absolute top-0 w-full h-full"
       >
         {/* Static Elements */}
-        <CurlyLoopIcon className="top-[10%] left-[15%] absolute z-10 size-10 rotate-45" />
-        <CurlyLoopIcon className="top-[20%] right-[15%] absolute z-10 size-16" />
+        <CurlyLoopIcon className="top-[20%] sm:top-[10%] left-[15%] absolute z-10 size-8 md:size-10 rotate-45" />
+        <CurlyLoopIcon className="top-[20%] sm:top-[20%] right-[15%] absolute z-10 size-12 md:size-16" />
         <DoubleCurlyIcon className="bottom-[20%] left-[15%] absolute z-10 size-16" />
         <DoubleCurlyIcon className="bottom-[15%] right-[15%] absolute z-10 size-16 -scale-x-100" />
         <HeroStarIcon className="absolute bottom-[10%] right-1/2" />
       </motion.div>
 
-      <FadedCircle position={{ top: "-5%", left: "10%" }} size={200} />
+      <FadedCircle position={{ top: "10%", left: "5%" }} size={200} className="opacity-80" />
       <FadedCircle
         position={{ bottom: "-10%", right: "-20%" }}
         size={500}
@@ -163,7 +184,13 @@ const heroData = [
   {
     prefixText: "Where",
     suffixText: "Design Meets Digital",
-    Icon: <ElevatedIcon />,
+    Icon: (
+      <ElevatedIcon
+        icon={
+          <TrendingUp className="size-6 md:size-7 text-white" strokeWidth={3} />
+        }
+      />
+    ),
     primaryText: "Growth",
     color: "text-pink-500",
     description:
@@ -172,7 +199,12 @@ const heroData = [
   {
     prefixText: "Crafting",
     suffixText: "Digital Experiences That",
-    Icon: <ElevatedIcon icon={<CogAutomationIcon className="size-4 md:size-7" />} color="violet" />,
+    Icon: (
+      <ElevatedIcon
+        icon={<CogAutomationIcon className="size-6 md:size-7" />}
+        color="violet"
+      />
+    ),
     primaryText: "Inspire",
     color: "text-violet-500",
     description:
@@ -182,7 +214,10 @@ const heroData = [
     prefixText: "Accelerating brands",
     suffixText: "Through",
     Icon: (
-      <ElevatedIcon icon={<RocketIcon className="size-3 md:size-5" />} color="blue" />
+      <ElevatedIcon
+        icon={<RocketIcon className="size-6 md:size-7" />}
+        color="blue"
+      />
     ),
     primaryText: "Innovations",
     color: "text-blue-500",
