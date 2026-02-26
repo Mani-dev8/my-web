@@ -46,7 +46,7 @@ const RenderSection = ({
   return (
     <TextTranslate
       direction="up"
-      className=" mb-4 md:mb-4 lg:mb-8 z-10"
+      className=" mb-4 md:mb-4 lg:mb-8"
       delay={delay}
       disableAnimation={disableAnimation}
     >
@@ -109,7 +109,7 @@ function HeroSection() {
     <SectionWrapper className="overflow-hidden -mt-18 sm:mt-0 max-w-none relative h-screen min-h-200 text-center lg:items-center">
       <motion.div
         {...fadeAnimationOption("down")}
-        className="flex flex-col space-y-4 sm:-mt-12 items-center justify-center"
+        className="flex flex-col space-y-4 sm:-mt-12 items-center justify-center z-20"
       >
         {/* Main Content Start*/}
         <AnimatePresence mode="wait">

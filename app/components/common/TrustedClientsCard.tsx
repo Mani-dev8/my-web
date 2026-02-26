@@ -9,7 +9,7 @@ type Props = {
 
 function TrustedClientsCard({imgSrc,imgAlt}: Props) {
   return (
-    <div className="px-4 py-12 flex flex-col items-center justify-center text-center md:justify-between">
+    <div className="px-4 pb-12 flex flex-col items-center justify-center text-center md:justify-between">
       <Image src={imgSrc} alt={imgAlt} width={140} height={200} className="object-contain md:h-48"/>
       <RichText MDText="Partnering with Aivory Studio, **we designed a next-gen AI photo editing platform UI UX Design** that blends smart technology with seamless user experience." />
     </div>
