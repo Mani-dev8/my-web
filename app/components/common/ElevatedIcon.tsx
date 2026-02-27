@@ -24,7 +24,7 @@ function ElevatedIcon({
   const bgColor = colorMap[color];
   return (
     <div
-      className={`relative -mt-4 md:-mt-1 lg:my-auto inline-flex items-center justify-center size-12 md:size-14 lg:size-16  ${
+      className={`relative -mt-4.5 md:-mt-1 lg:my-auto inline-flex items-center justify-center size-12 md:size-14 lg:size-16  ${
         className ?? ""
       }`}
     >
