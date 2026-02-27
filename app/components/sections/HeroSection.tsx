@@ -46,30 +46,33 @@ const RenderSection = ({
   return (
     <TextTranslate
       direction="up"
-      className=" mb-4 md:mb-4 lg:mb-8"
+      className="mb-2 md:mb-4 lg:mb-8"
       delay={delay}
       disableAnimation={disableAnimation}
     >
-      <div className="flex flex-wrap items-start justify-center">
+      <div className="flex flex-wrap items-start justify-center pt-3">
         {prefixText.split(" ").map((word, index) => (
-          <h2 className="text-4xl md:text-5xl lg:text-7xl lg:leading-18 xl:text-[82px] xl:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl pb-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl leading-7 md:leading-12 lg:leading-18 xl:text-[82px] xl:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl pb-3">
             {word}&nbsp;
           </h2>
         ))}
         {Icon}
-        <h2 className="text-4xl md:text-5xl lg:text-7xl lg:leading-18 xl:text-[82px] xl:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl pb-3">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl leading-7 md:leading-12 lg:leading-18 xl:text-[82px] xl:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl pb-3">
           &nbsp;
         </h2>
         {suffixText.split(" ").map((word, index) => (
-          <h2 className="text-4xl md:text-5xl lg:text-7xl lg:leading-18 xl:text-[82px] xl:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl pb-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl leading-7 md:leading-12 lg:leading-18 xl:text-[82px] xl:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl pb-3">
             {word}&nbsp;
           </h2>
         ))}
-        <h2 className="text-4xl md:text-5xl lg:text-7xl lg:leading-18 xl:text-[82px] xl:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl pb-3">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl leading-7 md:leading-12 lg:leading-18 xl:text-[82px] xl:leading-18 font-semibold md:font-medium text-center max-w-md lg:max-w-6xl pb-3">
           <span className={`${color}`}>{primaryText}.</span>
         </h2>
       </div>
-      <Description className="mx-auto md:text-center lg:text-center -mt-2" text={description} />
+      <Description
+        className="mx-auto md:text-center lg:text-center -mt-2"
+        text={description}
+      />
     </TextTranslate>
   );
 };
@@ -106,10 +109,13 @@ function HeroSection() {
   const heroTextDelay = hasMounted.current ? 0 : 0.8;
   const skipFirstHeroAnimation = currentIndex === 0 && !hasLoopedOnce.current;
   return (
-    <SectionWrapper className="overflow-hidden -mt-18 sm:mt-0 max-w-none relative h-screen min-h-200 text-center lg:items-center">
+    <SectionWrapper
+      sectionClassName="max-h-[620px] md:max-h-[unset] overflow-hidden -mb-6"
+      className="overflow-hidden -mt-28 sm:mt-0 max-w-none relative min-h-200 text-center lg:items-center"
+    >
       <motion.div
         {...fadeAnimationOption("down")}
-        className="flex flex-col space-y-4 sm:-mt-12 items-center justify-center z-20"
+        className="flex flex-col space-y-4  items-center justify-center z-20"
       >
         {/* Main Content Start*/}
         <AnimatePresence mode="wait">
@@ -139,17 +145,22 @@ function HeroSection() {
         className="absolute top-0 w-full h-full"
       >
         {/* Static Elements */}
-        <CurlyLoopIcon className="top-[20%] sm:top-[10%] left-[15%] absolute z-10 size-8 md:size-10 rotate-45" />
-        <CurlyLoopIcon className="top-[20%] sm:top-[20%] right-[15%] absolute z-10 size-12 md:size-16" />
-        <DoubleCurlyIcon className="bottom-[20%] left-[15%] absolute z-10 size-16" />
-        <DoubleCurlyIcon className="bottom-[15%] right-[15%] absolute z-10 size-16 -scale-x-100" />
-        <HeroStarIcon className="absolute bottom-[10%] right-1/2" />
+        <CurlyLoopIcon className="top-[24%] sm:top-[10%] left-[15%] absolute z-10 size-8 md:size-10 rotate-45" />
+        <CurlyLoopIcon className="top-[25%] sm:top-[20%] right-[15%] absolute z-10 size-12 md:size-16" />
+        <DoubleCurlyIcon className="bottom-[24%] sm:bottom-[20%] left-[15%] absolute z-10 size-16" />
+        <DoubleCurlyIcon className="bottom-[24%] sm:bottom-[15%] right-[15%] absolute z-10 size-16 -scale-x-100" />
+        <HeroStarIcon className="absolute bottom-[20%] sm:bottom-[10%] right-5/12 sm:right-1/2" />
       </motion.div>
 
-      <FadedCircle position={{ top: "10%", left: "5%" }} size={200} className="opacity-80" />
+      <FadedCircle
+        position={{ top: "18%", left: "5%" }}
+        size={200}
+        className="opacity-100"
+      />
       <FadedCircle
         position={{ bottom: "-10%", right: "-20%" }}
-        size={500}
+        size={300}
+        className="md:size-[500px]"
         color={{
           from: "rgba(114, 39, 219, 0.6)",
           to: "rgba(114, 39, 219, 0.2)",
@@ -157,20 +168,20 @@ function HeroSection() {
       />
       <motion.div
         {...fadeAnimationOption("up")}
-        className="w-full absolute bottom-0"
+        className="w-full absolute bottom-24 sm:bottom-0"
       >
         <Image
           alt="hero1 image"
           height={90}
           width={180}
-          className="h-40 w-46 sm:h-48 sm:w-56 md:h-[14.4rem] md:w-[16.8rem] lg:h-[17.28rem] lg:w-[20.16rem] object-cover rotate-15 rounded-lg  md:rounded-2xl lg:rounded-3xl overflow-hidden border absolute -bottom-10 lg:-bottom-20 -left-10 lg:left-1/5"
+          className="h-32 w-46 sm:h-48 sm:w-56 md:h-[14.4rem] md:w-[16.8rem] lg:h-[17.28rem] lg:w-[20.16rem] object-cover rotate-15 rounded-xl  md:rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl shadow-zinc-500 border border-zinc-300 absolute -bottom-10 lg:-bottom-20 -left-10 lg:left-1/5"
           src={"/home/hero1.png"}
         />
         <Image
           alt="hero1 image"
           height={90}
           width={180}
-          className="h-40 w-46 sm:h-48 sm:w-56 md:h-[14.4rem] md:w-[16.8rem] lg:h-[17.28rem] lg:w-[20.16rem] object-cover -rotate-15 rounded-lg  md:rounded-2xl lg:rounded-3xl overflow-hidden border absolute -bottom-10 lg:-bottom-20 -right-10 lg:right-1/5"
+          className="h-32 w-46 sm:h-48 sm:w-56 md:h-[14.4rem] md:w-[16.8rem] lg:h-[17.28rem] lg:w-[20.16rem] object-cover -rotate-15 rounded-xl  md:rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl shadow-zinc-500 border border-zinc-300 absolute -bottom-10 lg:-bottom-20 -right-10 lg:right-1/5"
           src={"/home/hero2.png"}
         />
       </motion.div>
@@ -211,8 +222,8 @@ const heroData = [
       "Helping brands rise above the noise, we combine creative design, compelling visuals, and strategic marketing to elevate your presence with clarity, precision, and measurable results.",
   },
   {
-    prefixText: "Accelerating brands",
-    suffixText: "Through",
+    prefixText: "Accelerating",
+    suffixText: "Brands Through",
     Icon: (
       <ElevatedIcon
         icon={<RocketIcon className="size-6 md:size-7" />}

@@ -140,8 +140,8 @@ const Navbar = () => {
           animate={{ scale: isScrolled ? 0.9 : 1, x: isScrolled ? -10 : 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          <div className="relative flex items-center justify-center w-12 h-12 md:w-10 md:h-10 bg-gradient-to-tr from-indigo-50 to-purple-50 rounded-lg shadow-lg">
-            <Image width={40} height={40} src={"/logo.png"} alt="brand logo" />
+          <div className="relative flex items-center justify-center ">
+            <Image width={84} height={40} src={"/logo.png"} alt="brand logo" />
           </div>
         </motion.div>
 
